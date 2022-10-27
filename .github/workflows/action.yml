@@ -1,58 +1,25 @@
-name: "Reusable workflow 1"
+name: 'Terraform Plan'
+description: 'Terraform Custom Workflow'
 
-on: 
-  workflow_call:
+inputs:
+  STATEBUCKET:
+    description: 'statebucket name'
+    required: true
+    options:
+    - bucketname
+  ENVIRONMENT:
+     description: 'environment name'
+     required: true
+     options:
+      - environmentname
 
-jobs:
-
-
-   ru2-job1:
-     runs-on: ubuntu-latest
-
-     steps:
-
-
-      - uses: actions/checkout@v3
-
-      - name: val-task
-
-        run: |
-          echo "I am user"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# name: 'Terraform Plan'
-# description: 'Terraform Custom Workflow'
-
-# inputs:
-#   STATEBUCKET:
-#     description: 'statebucket name'
-#     required: true
-
-# runs:
-#   using: "composite"
-#   steps:
-#     - name: terraform init
-#       run: terraform init
-#     - name: terraform plan
-#       run: terraform plan
+env:
+  STATEBUCKETNAME: ${{ github.event.inputs.STATEBUCKET }}
+  ENVIRONMENTNAME: ${{ github.event.inputs.ENVIRONMENT }}
+runs:
+  using: "composite"
+  steps:
+    - name: terraform Initiation
+      run: terraform init -backend-config="bucket=${STATEBUCKET}"
+    - name: terraform plannning
+      run: terraform plan
