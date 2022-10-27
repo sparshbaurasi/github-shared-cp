@@ -22,7 +22,7 @@ jobs:
    rul-job1:
           runs-on: ubuntu-latest  
    steps:
-    - uses: actions/checkout@v3
-    - name: datajob
-      run: | 
-        echo "I am sohem"
+         - uses: actions/checkout@v3
+         - name: datajob
+           run: | 
+             echo "I am sohem"
