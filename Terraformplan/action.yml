@@ -1,22 +1,33 @@
-name: 'Terraform Plan'
-description: 'Terraform Custom Workflow'
+# name: 'Terraform Plan'
+# description: 'Terraform Custom Workflow'
 
-inputs:
-  STATEBUCKET:
-    description: 'statebucket name'
-    required: true
+# inputs:
+#   STATEBUCKET:
+#     description: 'statebucket name'
+#     required: true
 
-runs:
-  using: "composite"
-  steps:
+# runs:
+#   using: "composite"
+#   steps:
+#     - name: terraform init
+#       run: terraform init
+#     - name: terraform plan
+#       run: terraform plan
+name: Resuables workflow 1
+
+on: 
+  workflow_call:
+
+jobs:
+  
+
+   rul-job1:
+        
+          runs-on: ubuntu-latest
     
-#      run: |
-#        docker login ${{ inputs.docker_registry }} -u ${{ env.DOCKER-USERNAME }} -p ${{ env.DOCKER-PASSWORD }}
-#        #docker login ${{ inputs.docker_registry }} -u ${{ steps.azsec.outputs.SMP-APP-DOCKER-USERNAME }} -p ${{ steps.azsec.outputs.SMP-APP-DOCKER-PASSWORD }}
-#      shell: bash
-    - name: terraform init
-      run: |
-          
-    - name: terraform plan
-      run: |
-          terraform plan
+   steps:
+         
+      - uses: actions/checkout@v3
+      - name: datajob
+        run: | 
+             echo "I am sohem"
