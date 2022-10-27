@@ -1,0 +1,22 @@
+name: 'Terraform Plan'
+description: 'Terraform Custom Workflow'
+
+inputs:
+  STATEBUCKET:
+    description: 'statebucket name'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    
+#      run: |
+#        docker login ${{ inputs.docker_registry }} -u ${{ env.DOCKER-USERNAME }} -p ${{ env.DOCKER-PASSWORD }}
+#        #docker login ${{ inputs.docker_registry }} -u ${{ steps.azsec.outputs.SMP-APP-DOCKER-USERNAME }} -p ${{ steps.azsec.outputs.SMP-APP-DOCKER-PASSWORD }}
+#      shell: bash
+    - name: terraform init
+      run: |
+          
+    - name: terraform plan
+      run: |
+          terraform plan
