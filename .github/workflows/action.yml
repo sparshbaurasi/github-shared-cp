@@ -7,18 +7,15 @@ on:
           STATEBUCKET:
             description: 'statebucket name'
             required: true
-            options:
-            - mybucksoham-cicd 
+            default: mybucksoham-cicd 
           ENVIRONMENT:
              description: 'environment name'
              required: true
-             options:
-             - test
+             default: test
           REGION:
              description: 'region'
              required: true
-             options:
-             - ap-south-1
+             default: ap-south-1
  runs:
   using: "composite"
   steps:
