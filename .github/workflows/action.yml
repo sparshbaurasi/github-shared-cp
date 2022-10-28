@@ -4,22 +4,17 @@ description: 'Terraform Custom Workflow'
 inputs:
   STATEBUCKET:
     description: 'statebucket name'
-    required: true
-    options:
-    - bucketname
+    required: true  
   ENVIRONMENT:
      description: 'environment name'
      required: true
-     options:
-      - environmentname
-
-env:
-  STATEBUCKETNAME: ${{ github.event.inputs.STATEBUCKET }}
-  ENVIRONMENTNAME: ${{ github.event.inputs.ENVIRONMENT }}
-runs:
+  REGION:
+     description: 'region'
+     required: true
+ runs:
   using: "composite"
   steps:
-    - name: terraform Initiation
-      run: terraform init -backend-config="bucket=${STATEBUCKET}"
-    - name: terraform plannning
+    - name: Terraform Init
+      run: terraform init -backend-config="bucket=${{ inputs.STATEBUCKETNAME }}" -backend-config="region=${{ inputs.REGION }}"
+    - name: Terraform Plan
       run: terraform plan
