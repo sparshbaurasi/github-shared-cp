@@ -15,7 +15,7 @@ on:
         REGION:
            description: 'region'
            required: true
-           default: "ap-south-1"
+           default: ap-south-1
  runs:
   using: "composite"
   steps:
