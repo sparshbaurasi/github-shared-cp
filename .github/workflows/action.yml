@@ -1,22 +1,24 @@
 name: 'Terraform Plan'
 description: 'Terraform Custom Workflow'
 
-inputs:
-  STATEBUCKET:
-    description: 'statebucket name'
-    required: true
-    options:
-    - mybucksoham-cicd 
-  ENVIRONMENT:
-     description: 'environment name'
-     required: true
-     options:
-     - test
-  REGION:
-     description: 'region'
-     required: true
-     options:
-     - ap-south-1
+on:
+  workflow_call:
+        inputs:
+          STATEBUCKET:
+            description: 'statebucket name'
+            required: true
+            options:
+            - mybucksoham-cicd 
+          ENVIRONMENT:
+             description: 'environment name'
+             required: true
+             options:
+             - test
+          REGION:
+             description: 'region'
+             required: true
+             options:
+             - ap-south-1
  runs:
   using: "composite"
   steps:
