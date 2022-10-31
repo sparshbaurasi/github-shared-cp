@@ -5,7 +5,7 @@ inputs:
   STATEBUCKET:
     description: 'statebucket name'
     required: true
-    default: mybucksoham-cicd 
+    default: tf-state-bucket1 
   ENVIRONMENT:
     description: 'environment name'
     required: true
@@ -18,7 +18,7 @@ runs:
   using: "composite"
   steps:
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="bucket=$(STATEBUCKET)" -backend-config-="region=$(REGION)"
       shell: bash
     - name: Terraform Plan
       run: terraform plan
