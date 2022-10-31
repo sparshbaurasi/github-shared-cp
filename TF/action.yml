@@ -14,16 +14,11 @@ inputs:
     description: 'region'
     required: true
     default: "ap-south-1"
-env:
-  STATEBUCKETNAME: ${{ github.event.inputs.STATEBUCKET }}
-#   STATEKEYNAME: ${{ github.event.inputs.STATEKEY }}
-#   ENVRIONMENTNAME: ${{ github.event.inputs.ENVRIONMENT }}
-  REGIONNAME: ${{ github.event.inputs.REGION }}
 runs:
   using: "composite"
   steps:
     - name: Terraform Init
-      run: terraform init -backend-config="bucket=${STATEBUCKETNAME}" -backend-config-="region=${REGIONNAME}"
+      run: terraform init -backend-config="bucket=${{ github.event.inputs.STATEBUCKET }}" -backend-config-="region=${{ github.event.inputs.REGIONNAME }}"
       shell: bash
     - name: Terraform Plan
       run: terraform plan
