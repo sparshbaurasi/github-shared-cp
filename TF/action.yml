@@ -26,5 +26,7 @@ runs:
          terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
       shell: bash
     - name: Terraform Plan
-      run: terraform plan
+      run: |
+           cd ./services/${{inputs.DIRECTORY}} \
+           terraform plan
       shell: bash
