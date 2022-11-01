@@ -17,7 +17,6 @@ inputs:
   DIRECTORY:
     description: 'Working directory'
     required: true
-    default: "sqs-s3-event"
 runs:
   using: "composite"
   steps:
