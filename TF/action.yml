@@ -20,8 +20,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-#     - name : change directory cmd
-#       run : cd ./service/${{inputs.DIRECTORY}}
+    - name : change directory cmd
+      run : pwd
     - name: Terraform Init
       run: cd /services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
       shell: bash
