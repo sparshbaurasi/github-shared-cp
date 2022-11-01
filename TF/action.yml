@@ -21,10 +21,10 @@ runs:
   using: "composite"
   steps:
     - name: Terraform Init
-      run: terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
-      working_directory: ./services/${{inputs.DIRECTORY}}
+      run: |
+         cd ./services/${{inputs.DIRECTORY}} \
+         terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
       shell: bash
     - name: Terraform Plan
       run: terraform plan
       shell: bash
-      working_directory: ./services/${{inputs.DIRECTORY}}
