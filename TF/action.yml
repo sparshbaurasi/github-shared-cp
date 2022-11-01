@@ -27,6 +27,6 @@ runs:
       shell: bash
     - name: Terraform Plan
       run: |
-           cd ./services/${{inputs.DIRECTORY}} \
-           terraform plan
+         cd ./services/${{inputs.DIRECTORY}} \
+         terraform plan
       shell: bash
