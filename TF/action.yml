@@ -23,7 +23,7 @@ runs:
     - name : change directory cmd
       run : pwd
       shell: bash
-     - name : change directory cmd
+    - name : change directory cmd
       run : ls
       shell: bash
     - name: Terraform Init
