@@ -23,8 +23,8 @@ runs:
 #     - name : change directory cmd
 #       run : cd ./service/${{inputs.DIRECTORY}}
     - name: Terraform Init
-      run: cd ./services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
+      run: cd /services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATEBUCKET}}" -backend-config="region=${{inputs.REGION}}"
       shell: bash
     - name: Terraform Plan
-      run: cd ./services/${{inputs.DIRECTORY}} && terraform plan
+      run: cd /services/${{inputs.DIRECTORY}} && terraform plan
       shell: bash
