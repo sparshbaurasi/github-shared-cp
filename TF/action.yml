@@ -5,15 +5,12 @@ inputs:
   STATEBUCKET:
     description: 'statebucket name'
     required: true
-    default: tf-state-bucket1 
   ENVIRONMENT:
     description: 'environment name'
     required: true
-    default: test
   REGION:
     description: 'region'
     required: true
-    default: "ap-south-1"
   DIRECTORY:
     description: 'Working directory'
     required: true
