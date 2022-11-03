@@ -14,7 +14,6 @@ inputs:
   REGION:
     description: 'region'
     required: true
-    .
   DIRECTORY:
     description: 'Working directory'
     required: true
