@@ -5,7 +5,7 @@ inputs:
   STATE_BUCKET:
     description: 'statebucket name'
     required: true
-  STATEKEY:
+  STATE_KEY:
     description: 'statekey name'
     required: true
   ENVIRONMENT:
