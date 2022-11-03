@@ -7,7 +7,7 @@ inputs:
     required: true
   STATE_KEY:
     description: 'statekey name'
-    required: true
+    required: true  
   ENVIRONMENT:
     description: 'environment name'
     required: true
