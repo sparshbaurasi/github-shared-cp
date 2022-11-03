@@ -1,5 +1,5 @@
 name: 'Terraform Plan'
-description: 'Terraform Custom Workflow'
+description: 'Terraform Compoite action for terraform plan'
 
 inputs:
   STATE_BUCKET:
