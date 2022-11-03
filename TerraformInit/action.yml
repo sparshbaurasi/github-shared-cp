@@ -5,6 +5,9 @@ inputs:
   STATE_BUCKET:
     description: 'statebucket name'
     required: true
+  STATE_KEY:
+    description: 'statekey name'
+    required: true    
   ENVIRONMENT:
     description: 'environment name'
     required: true
@@ -18,5 +21,5 @@ runs:
   using: "composite"
   steps:
     - name: Terraform Init
-      run: cd ./services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATE_BUCKET}}" -backend-config="region=${{inputs.REGION}}" && terraform workspace select ${{inputs.ENVIRONMENT}} || terraform workspace new ${{inputs.ENVIRONMENT}}
+      run: cd ./services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATE_BUCKET}}" -backend-config="key=${{inputs.STATE_KEY}}" -backend-config="region=${{inputs.REGION}}" && terraform workspace new ${{inputs.ENVIRONMENT}} || terraform workspace select ${{inputs.ENVIRONMENT}}
       shell: bash
