@@ -11,6 +11,17 @@ The way this action works is the following:
 1. `terraform workspace select` command will select the workspace which is specified in the inputs
 1. If the terraform configuration is configured correctly the action will perform the `Terraform init` command of the same.
 
+## inputs
+```yaml
+inputs:
+  DIRECTORY:
+    description: 'Directory name for terraform source configuration'
+    required: true
+  ENVIRONMENT_NAME:
+    description: 'Environment name'
+    required: true
+```
+
 ## Usage
 
 ```yaml

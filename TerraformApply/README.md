@@ -8,6 +8,15 @@ The way this action works is the following:
 1. `Terraform apply` will go to the directory wwhere the terraform configuration files are present.
 1. If the terraform configuration is configured correctly the action will perform the `Terraform apply ` command of the same.
 
+## inputs
+
+```yaml
+inputs:
+  DIRECTORY:
+    description: 'Directory name for terraform source configuration'
+    required: true
+```
+
 ## Usage
 
 ```yaml

@@ -8,6 +8,14 @@ The way this action works is the following:
 1. `Terraform plan destroy` will go to the directory where the terraform configuration files are present.
 1. If the terraform configuration is configured correctly the action will perform the `Terraform plan destroy` command of the files present and display the resources to be deleted.
 
+## inputs
+```yaml
+inputs:
+  DIRECTORY:
+    description: 'Directory name for terraform source configuration'
+    required: true
+```
+
 ## Usage
 
 ```yaml
