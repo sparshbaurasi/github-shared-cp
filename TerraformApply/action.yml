@@ -2,27 +2,12 @@ name: 'Terraform Apply'
 description: 'Terraform Composite action for terrafrom apply'
 
 inputs:
-  STATE_BUCKET:
-    description: 'statebucket name'
-    required: true
-  STATE_KEY:
-    description: 'statekey name'
-    required: true    
-  ENVIRONMENT:
-    description: 'environment name'
-    required: true
-  REGION:
-    description: 'region'
-    required: true
   DIRECTORY:
     description: 'Working directory'
     required: true
 runs:
   using: "composite"
   steps:
-    # - name: Terraform Init
-    #   run: cd services/${{inputs.DIRECTORY}} && terraform init -backend-config="bucket=${{inputs.STATE_BUCKET}}" -backend-config="key=${{inputs.STATE_KEY}}" -backend-config="region=${{inputs.REGION}}" && terraform workspace select ${{inputs.ENVIRONMENT}} || terraform workspace new ${{inputs.ENVIRONMENT}}
-    #   shell: bash
     - name: Terraform Apply
       run: cd ./services/${{inputs.DIRECTORY}} && terraform apply -auto-approve
       shell: bash

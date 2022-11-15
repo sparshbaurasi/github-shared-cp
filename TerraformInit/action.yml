@@ -1,21 +1,9 @@
 name: 'Terraform Init'
 description: 'Terraform Composite action for terrafrom init'
 
-inputs:
-  STATE_BUCKET:
-    description: 'statebucket name'
-    required: true
-  STATE_KEY:
-    description: 'statekey name'
-    required: true
-  STATE_LOCK_TABLE:
-    description: 'statelock table name'
-    required: true   
+inputs:  
   ENVIRONMENT:
     description: 'environment name'
-    required: true
-  REGION:
-    description: 'region'
     required: true
   DIRECTORY:
     description: 'Working directory'
